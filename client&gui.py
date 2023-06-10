@@ -40,9 +40,7 @@ def download_file(server_ip, server_port, file_path):
         client_socket.connect((server_ip, server_port))
 
         client_socket.send(b'download')
-
-        confirmation = client_socket.recv(1024).decode()
-        if confirmation == "download_request_received":
+        
             client_socket.send(file_path.encode())
 
             filename, filesize = client_socket.recv(1024).decode().split('\n')
