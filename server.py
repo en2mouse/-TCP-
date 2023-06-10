@@ -70,7 +70,7 @@ def main():
                 # 处理上传文件请求
                 receive_file(client_socket, save_path)
             elif request == 'download':
-                client_socket.send("download_request_received".encode())
+                
                 # 处理下载文件请求
                 file_path = client_socket.recv(1024).decode()
 
